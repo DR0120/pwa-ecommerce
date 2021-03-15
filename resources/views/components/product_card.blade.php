@@ -25,6 +25,7 @@
             <form action="{{route('cart.add')}}" method="post">
               @csrf
               <input type="hidden" name="producto_id" value="{{$producto->id}}">
+              <input type="hidden" name="cantidad" value=1>
               <input type="submit" name="btn" class="btn btn-success btn-sm" value="Carrito">
             </form>
           </div>

@@ -45,7 +45,7 @@
                     <th>Cod</th>
                     <th>Nombre</th>
                     <th>Categoria</th>
-                    <th>Imagenes</th>
+                    <th>Stock</th>
                     <th>Precio</th>
                     <th>Oferta</th>
                     <th>Estado</th>
@@ -59,9 +59,7 @@
                     <td>{{$producto['cod']}}</td>
                     <td><a href={{ route('productos.mostrar', ['id'=>$producto->id]) }}>{{$producto['nombre']}}</a></td>
                     <td>{{$producto['categoria'] }}</td>
-                    <td>@foreach ($producto['imagenes'] as $item)
-                        <img src="/inventario/img/{{$item}}" width="40" height="40">
-                    @endforeach</td>
+                    <td>{{$producto['stock']}}</td>
                     <td>$ {{number_format($producto['precio_venta'])}}</td>
                     @if ($producto->oferta == 0)
                       <td>sin oferta</td>
@@ -81,8 +79,6 @@
                           <span class="sr-only">Toggle Dropdown</span>
                         </button>
                         <div class="dropdown-menu" role="menu">
-                          {{-- <a class="dropdown-item editbtn">Editar</a> --}}
-                          {{-- <a class="dropdown-item" href="{{ route('productos.editar', ['id'=>$producto->id]) }}">Editar</a> --}}
                           <a class="dropdown-item" href="#" onclick="editar({{$producto}})">Editar</a>
                           <a class="dropdown-item" href="#" onclick="editarOferta({{$producto}})">Agregar oferta</a>
                           <a class="dropdown-item" href="{{ route('productos.condicion', ['id'=>$producto->id]) }}">

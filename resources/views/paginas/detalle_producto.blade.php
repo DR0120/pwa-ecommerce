@@ -43,7 +43,7 @@
             <form action="{{route('cart.add')}}" method="post">
             <dt>Ingrese una cantidad:</dt>
             <div class="col-3">
-              <input type="number" name="cantidad">
+              <input type="number" name="cantidad" value=1>
             </div>
 
             <div class="mt-4">

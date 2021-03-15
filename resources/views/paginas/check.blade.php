@@ -1,8 +1,5 @@
 @extends('layouts.layout2')
-@section('title', 'marcas')
-
-@section('css')
-@endsection
+@section('title', 'cheack')
 
 @section('contenido')
 <div class="content-wrapper">
@@ -10,80 +7,66 @@
         <div class="row">
           <div id="checkout" class="col-lg-9">
             <div class="box border-bottom-0">
-              <form method="post" action="{{ route('carrito.venta') }}">
+              <form method="post" action="{{ route('venta') }}">
                 @csrf
                 <div class="content">
                   <div class="row">
                     <div class="col-sm-6">
                       <div class="form-group">
-                        <label for="firstname"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Nombre</font></font></label>
-                        <input id="firstname" type="text" class="form-control" name="nombre">
+                        <label for="firstname">Nombre</label>
+                        <input id="firstname" type="text" class="form-control" name="nombre" value={{ Auth::user()->name }}>
                       </div>
                     </div>
                     <div class="col-sm-6">
                       <div class="form-group">
-                        <label for="lastname"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Apellido</font></font></label>
-                        <input id="lastname" type="text" class="form-control" name="apellido">
-                      </div>
-                    </div>
-                  </div>
-                  <div class="row">
-                    <div class="col-sm-6">
-                      <div class="form-group">
-                        <label for="company"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Carnet de Identidad</font></font></label>
-                        <input id="company" type="text" class="form-control" name="ci">
-                      </div>
-                    </div>
-                    <div class="col-sm-6">
-                      <div class="form-group">
-                        <label for="street"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">calle</font></font></label>
-                        <input id="street" type="text" class="form-control" name="calle">
+                        <label for="lastname">Apellido</label>
+                        <input id="lastname" type="text" class="form-control" name="apellido" value={{ Auth::user()->apellido }}>
                       </div>
                     </div>
                   </div>
                   <div class="row">
                     <div class="col-sm-6 col-md-3">
                       <div class="form-group">
-                        <label for="city"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Ciudad</font></font></label>
-                        <input id="city" type="text" class="form-control" name="ciudad">
+                        <label for="city">C.I.</label>
+                        <input id="city" type="text" class="form-control" name="ci" value={{ Auth::user()->nro_documento }}>
                       </div>
                     </div>
                     <div class="col-sm-6 col-md-3">
                       <div class="form-group">
-                        <label for="zip"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">CÓDIGO POSTAL</font></font></label>
-                        <input id="zip" type="text" class="form-control" name="codigo-postal">
+                        <label for="zip">Direccion</label>
+                        <input id="zip" type="text" class="form-control" name="direccion">
                       </div>
                     </div>
                     <div class="col-sm-6 col-md-3">
                       <div class="form-group">
-                        <label for="state"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Expresar</font></font></label>
-                        <select id="state" class="form-control"></select>
+                        <label for="state">Calle</label>
+                        <input id="state" class="form-control" name="calle">
                       </div>
                     </div>
                     <div class="col-sm-6 col-md-3">
                       <div class="form-group">
-                        <label for="country"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">País</font></font></label>
-                        <select id="country" class="form-control"></select>
+                        <label for="country">Numero casa/domicilio</label>
+                        <input id="country" class="form-control" name="nro_casa">
                       </div>
                     </div>
                     <div class="col-sm-6">
                       <div class="form-group">
-                        <label for="phone"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Teléfono</font></font></label>
-                        <input id="phone" type="text" class="form-control" name="telefono">
+                        <label for="phone">Teléfono</label>
+                        <input id="phone" type="text" class="form-control" name="telefono" value={{ Auth::user()->telefono }}>
                       </div>
                     </div>
                     <div class="col-sm-6">
                       <div class="form-group">
-                        <label for="email"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Correo electrónico</font></font></label>
-                        <input id="email" type="text" class="form-control" name="email">
+                        <label for="email">Correo electrónico</label>
+                        <input id="email" type="text" class="form-control" name="email" value={{ Auth::user()->email }}>
                       </div>
                     </div>
                   </div>
                 </div>
                 <div class="box-footer d-flex flex-wrap align-items-center justify-content-between">
-                  <div class="left-col"><a href="{{ route('carrito.mostrar') }}" class="btn btn-secondary mt-0"><i class="fa fa-chevron-left"></i><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Volver a carrito</font></font></a></div>
+                  <div class="left-col"><a href="{{ route('carrito.mostrar') }}" class="btn btn-secondary mt-0"><i class="fa fa-chevron-left"></i>Volver a carrito</a></div>
                   <div class="right-col">
-                    <button type="submit" class="btn btn-info"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Confirmar pedido</font></font><i class="fa fa-chevron-right"></i></button>
+                    <button type="submit" class="btn btn-info">Confirmar pedido<i class="fa fa-chevron-right"></i></button>
                   </div>
                 </div>
               </form>

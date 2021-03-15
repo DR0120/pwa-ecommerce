@@ -88,8 +88,4 @@ class CartController extends Controller
 
         return view('paginas.check', compact('categorias', 'marcas'));
     }
-
-    public function venta(Request $request){
-        return $request;
-    }
 }

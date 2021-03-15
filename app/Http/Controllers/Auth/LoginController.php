@@ -7,7 +7,7 @@ use App\Providers\RouteServiceProvider;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-// use Cart;
+use Cart;
 
 class LoginController extends Controller
 {
@@ -46,7 +46,7 @@ class LoginController extends Controller
 
     public function logout(Request $request){
         Auth::logout();
-        // Cart::clear();
+        Cart::clear();
         $request->session()->invalidate();
         return back();
     }

@@ -73,4 +73,6 @@ Route::post('/cart-update', 'CartController@update')->name('cart.update');
 
 Route::get('/carrito-compra', 'CartController@carrito')->name('carrito.mostrar');
 Route::get('/check', 'CartController@check')->name('carrito.check');
-Route::post('/pedido', 'CartController@venta')->name('carrito.venta');
+Route::post('/pedido', 'PedidoController@store')->name('venta');
+Route::get('/pedido-mostrar', 'PedidoController@index')->name('pedido.mostrar');
+Route::get('/pedido-detalle/{id}', 'PedidoController@show')->name('pedido.detalle');
