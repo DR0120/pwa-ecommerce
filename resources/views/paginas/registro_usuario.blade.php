@@ -1,9 +1,7 @@
 @extends('layouts.layout2')
-
 @section('contenido')
-<div class="content-wrapper">
-    <div class="container">
-        <p class="login-box-msg">Registrar a un nuevo usuario</p>
+    <div class="container mt-4">
+        <h5 class="login-box-msg">Registrar a un nuevo usuario</h5>
 
         <form action="{{ route('registrar.nuevo') }}" method="get">
             @csrf
@@ -50,6 +48,4 @@
         
         </form>
   </div>
-</div>
-
 @endsection

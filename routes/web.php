@@ -17,11 +17,14 @@ use Illuminate\Support\Facades\Route;
 // Route::get('/', function () {
 //     return view('dashboard');
 // });
-Route::get('/dashboard', function () {
-    return view('dashboard');
+// Route::get('/', function () {
+//     return view('paginas.map');
+// });
+Route::get('/offline', function () {
+    return view('vendor.laravelpwa.offline');
 });
-Route::get('/inventario/productos', function () {
-    return view('producto');
+Route::get('/', function () {
+    return view('paginas.login');
 });
 Route::get('/inventario/categorias', 'CategoriaController@index');
 Route::post('/inventario/categorias', 'CategoriaController@store');
@@ -62,7 +65,7 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::get('/', 'ProductoController@inicio')->name('inicio');
+Route::get('/inicio', 'ProductoController@inicio')->name('inicio');
 Route::get('/registrar', 'Auth\RegisterController@show')->name('registrar.usuario');
 Route::get('/registrar/nuevo', 'Auth\RegisterController@store')->name('registrar.nuevo');
 Route::get('/salir', 'Auth\LoginController@logout')->name('salir');

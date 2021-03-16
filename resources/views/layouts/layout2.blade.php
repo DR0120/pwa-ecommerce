@@ -18,24 +18,23 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <link rel="stylesheet" href="/adminlte/css/adminlte.min.css">
   <!-- Google Font: Source Sans Pro -->
   <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
-</head>
-<body class="hold-transition layout-top-nav">
-<div class="wrapper">
 
-  @include('layouts.navbar2')
+  @yield('css')
+  @laravelPWA
+</head>
+<body class="{{(Request::is('/')? 'login-page' : '') }} hold-transition layout-navbar-fixed" style="min-height:512.391px">
+<div class="wrapper mb-4">
+  @auth
+    @include('layouts.navbar2')
+  @endauth
+
 
   @yield('contenido')
 
-  <!-- Main Footer -->
-  {{-- <footer class="main-footer">
-    <!-- To the right -->
-    <div class="float-right d-none d-sm-inline">
-      Anything you want
-    </div>
-    <!-- Default to the left -->
-    <strong>Copyright &copy; 2014-2019 <a href="https://adminlte.io">AdminLTE.io</a>.</strong> All rights reserved.
-  </footer> --}}
-  @include('layouts.footer')
+  @auth
+    @include('layouts.footer') 
+  @endauth
+  
 </div>
 <!-- ./wrapper -->
 

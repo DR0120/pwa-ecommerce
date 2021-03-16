@@ -37,7 +37,7 @@ class LoginController extends Controller
             if (Auth::user()->rol == 'admin') {
                 return view('dashboard');
             }
-            return back();
+            return redirect()->route('inicio');
         }
 
         return back()->withErrors(['usuario' => trans('auth.failed')])
@@ -48,6 +48,6 @@ class LoginController extends Controller
         Auth::logout();
         Cart::clear();
         $request->session()->invalidate();
-        return back();
+        return redirect('/');
     }
 }

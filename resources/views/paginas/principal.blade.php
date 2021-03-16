@@ -9,13 +9,13 @@
     </ol>
     <div class="carousel-inner">
       <div class="carousel-item active">
-        <img class="d-block w-100" src="https://www.fiercepc.co.uk/media/wysiwyg/PC-BUNDLE-BANNER.jpg" alt="First slide" height="500">
+        <img class="d-block w-100" src="https://www.fiercepc.co.uk/media/wysiwyg/PC-BUNDLE-BANNER.jpg" alt="First slide" height="300">
       </div>
       <div class="carousel-item">
-        <img class="d-block w-100" src="https://i0.wp.com/www.tech-critter.com/wp-content/uploads/SF360R-Banner_1200x600.jpg" alt="Second slide" height="500">
+        <img class="d-block w-100" src="https://i0.wp.com/www.tech-critter.com/wp-content/uploads/SF360R-Banner_1200x600.jpg" alt="Second slide" height="300">
       </div>
       <div class="carousel-item">
-        <img class="d-block w-100" src="https://jctech.co.za/wp-content/uploads/2020/09/asus-gaming-pcs-banner-980px-v1.jpg" alt="Third slide" height="500">
+        <img class="d-block w-100" src="https://jctech.co.za/wp-content/uploads/2020/09/asus-gaming-pcs-banner-980px-v1.jpg" alt="Third slide" height="300">
       </div>
     </div>
     <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
@@ -51,11 +51,11 @@
     <!-- Main content -->
     <div class="content">
       <div class="container">
-        <div class="album py-5 bg-light">
+        <div class="album bg-light">
           <div class="container">
             <div class="row" align="center">
-              @for ($i = 0; $i < 6; $i++)
-                <div class="col-2">
+              @for ($i = 0; $i < 3; $i++)
+                <div class="col-4">
                   <a href="{{ route('productos.catalogo.marca', ['marca'=>$marcas[$i]->id]) }}">
                     <img class="card-img-top" src="{{$marcas[$i]->imagen}}" alt="Card image cap" height="200">
                   </a>
@@ -67,10 +67,10 @@
         </div>
       </div>
     </div>
-    <div class="pt-5 bg-info">
+    <div class="bg-info">
       <div class="container">
         <div class="row pb-3" align="center">
-          <div class="col-md-3 col-sm-6 mb-4">
+          <div class="col-6 mb-0">
             <div class="d-flex">
               <div class="ps-3">
                 <i class="fas fa-motorcycle fa-5x"></i>
@@ -79,7 +79,7 @@
               </div>
             </div>
           </div>
-          <div class="col-md-3 col-sm-6 mb-4">
+          <div class="col-6 mb-0">
             <div class="d-flex">
               <div class="ps-3">
                 <i class="fas fa-box-open fa-5x"></i>
@@ -88,7 +88,7 @@
               </div>
             </div>
           </div>
-          <div class="col-md-3 col-sm-6 mb-4">
+          <div class="col-6 mb-0">
             <div class="d-flex">
               <div class="ps-3">
                 <i class="fas fa-headset fa-5x"></i>
@@ -97,7 +97,7 @@
               </div>
             </div>
           </div>
-          <div class="col-md-3 col-sm-6 mb-4">
+          <div class="col-6 mb-0">
             <div class="d-flex">
               <div class="ps-3">
                 <i class="fas fa-cart-plus fa-5x"></i>

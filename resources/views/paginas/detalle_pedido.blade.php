@@ -1,5 +1,4 @@
 @extends('layouts.layout2')
-@section('title', 'detalle-usuario')
 
 @section('contenido')
 <div class="content-wrapper">

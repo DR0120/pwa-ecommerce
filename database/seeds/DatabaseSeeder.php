@@ -130,7 +130,37 @@ class DatabaseSeeder extends Seeder
             'nombre' => 'SAMSUNG',
             'imagen' => 'https://upload.wikimedia.org/wikipedia/commons/6/6e/Logo_samsung_5.jpg'
         ]);
+        DB::table('marcas')->insert([
+            'nombre' => 'CORSAIR',
+            'imagen' => 'http://hardzone.es/app/uploads/2014/01/Corsair-logo-690x335.png'
+        ]);
+        DB::table('marcas')->insert([
+            'nombre' => 'LONGITECH',
+            'imagen' => 'https://logodownload.org/wp-content/uploads/2018/03/logitech-logo.png'
+        ]);
 
+        // OFERTAS
+        DB::table('ofertas')->insert([
+            'descuento' => 0.00,
+            'periodo_inicio' => '2021-03-09',
+            'periodo_fin' => '2021-03-09',
+        ]);
+
+        // PRODUCTOS
+        DB::table('productos')->insert([
+            'categoria_id' => 1,
+            'marca_id' => 1,
+            'oferta_id' => 1,
+            'cod' => 'BOA-001',
+            'nombre' => 'ASUS H310M',
+            'descripcion' => 'La ASUS PRIME H310M es una placa base de última generación preparada para soportar los procesadores Intel Core 8th generation (Intel Coffee Lake). Basado en el chipset Intel H310 Express, proporcionará un rendimiento óptimo para una configuración de última generación con un potente procesador. Soporta procesadores Intel Core Coffee Lake de octava generación, tarjetas gráficas PCI-Express 3.0 16x, unidades SATA de 6 Gbps y M.2, RAM DDR4 y dispositivos USB 3.0.',
+            'precio_venta' => 264.00,
+            'imagen' => 'ASUS H310M1.jpg',
+            'imagenes' => '["ASUS H310M1.jpg","ASUS H310M2.jpg","ASUS H310M3.jpg","ASUS H310M4.jpg"]',
+            'stock' => 20
+        ]);
+
+        //  USERS
         DB::table('users')->insert([
             'name' => 'admin',
             'apellido' => 'Rodriguez',
@@ -164,5 +194,11 @@ class DatabaseSeeder extends Seeder
             'rol' => 'user',
             'puntos_acumulados' => 0,
         ]);
+
+        // FAVORITOS
+        // DB::table('favoritos')->insert([
+        //     'persona_id' => 2,
+        //     'producto_id' => 25,
+        // ]);
     }
 }

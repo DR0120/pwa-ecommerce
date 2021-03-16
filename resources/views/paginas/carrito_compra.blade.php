@@ -1,5 +1,4 @@
 @extends('layouts.layout2')
-@section('title', 'marcas')
 
 @section('css')
 @endsection

@@ -22,7 +22,8 @@ class CreatePedidosTable extends Migration
             $table->string('direccion');
             $table->string('calle');
             $table->string('nro_casa');
-            $table->string('ubicacion_url');
+            $table->string('ubicacion_lat');
+            $table->string('ubicacion_lon');
 
             $table->foreign('persona_id')->references('id')->on('users');
 

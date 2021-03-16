@@ -1,9 +1,4 @@
 @extends('layouts.layout2')
-@section('title', 'marcas')
-
-@section('css')
-@endsection
-
 
 @section('contenido')
 <!-- Content Wrapper. Contains page content -->

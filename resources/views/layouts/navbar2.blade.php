@@ -1,9 +1,9 @@
 <!-- Navbar -->
-<nav class="main-header navbar navbar-expand-md navbar-light navbar-white">
+<nav class="main-header navbar navbar-expand-md navbar-dark navbar-cyan">
     <div class="container">
-      <a href="/" class="navbar-brand">
+      {{-- <a href="/" class="navbar-brand">
         <h2 class="brand-text font-weight-light">Giga-net Inc.</h2>
-      </a>
+      </a> --}}
       
       <button class="navbar-toggler order-1" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -12,9 +12,9 @@
       <div class="collapse navbar-collapse order-3" id="navbarCollapse">
         <!-- Left navbar links -->
         <ul class="navbar-nav">
-          <li class="nav-item">
+          {{-- <li class="nav-item">
             <a href="{{ route('inicio') }}" class="nav-link">Inicio</a>
-          </li>
+          </li> --}}
           <li class="nav-item dropdown">
             <a id="dropdownSubMenu1" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="nav-link dropdown-toggle">Catalogo</a>
             <ul aria-labelledby="dropdownSubMenu1" class="dropdown-menu border-0 shadow">
@@ -77,9 +77,9 @@
         </li>
         @include('components.login')
         @else
-          <li class="nav-item">
+          {{-- <li class="nav-item">
             <a href="{{ route('favoritos.index', ['id'=>Auth::id()]) }}" class="nav-link">favoritos</a>
-          </li>
+          </li> --}}
           <li class="nav-item">
             <a class="nav-link" data-widget="control-sidebar" data-slide="true" href="#">
               <i class="fas fa-shopping-cart"></i>

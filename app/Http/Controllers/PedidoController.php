@@ -48,7 +48,8 @@ class PedidoController extends Controller
             $pedido->direccion = $request->direccion;
             $pedido->calle=$request->calle;
             $pedido->nro_casa = $request->nro_casa;
-            $pedido->ubicacion_url = '';
+            $pedido->ubicacion_lat = $request->lat;
+            $pedido->ubicacion_lon = $request->lon;
             $pedido->save();
             
 

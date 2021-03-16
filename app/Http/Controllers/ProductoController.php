@@ -161,9 +161,7 @@ class ProductoController extends Controller
             ->where('productos.id', $id)
             ->select('productos.*', 'ofertas.descuento as oferta')
             ->first();
-
         $producto->imagenes = json_decode($producto->imagenes);
-        
         $productos = Producto::join('categorias','categorias.id','=','productos.categoria_id')
             ->join('marcas','marcas.id','=','productos.marca_id')
             ->join('ofertas','ofertas.id','=','productos.oferta_id')
